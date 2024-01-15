@@ -2,11 +2,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 62.5%;
 }
 body {
   font-family: 'Anton', sans-serif;
   background-color: rgb(103, 196, 103);
-  font-size: 62.5%;
 }
 
 .header {
@@ -16,7 +16,7 @@ body {
   height: 20vh;
 }
 .title {
-  font-size: 2.6rem;
+  font-size: 4rem;
   color: #ffffff;
   font-weight: lighter;
 }
@@ -30,11 +30,13 @@ body {
   align-items: center;
 }
 .inputName {
+  font-size: 1.2rem;
   padding: 7px;
   border-radius: 10px;
   border: none;
   box-shadow: 0px 2px 2px lightgray;
   margin-bottom: 30px;
+  text-align: center;
 }
 .gameOption {
   width: 300px;
@@ -68,6 +70,7 @@ body {
   background-color: transparent;
   border-radius: 20px;
   box-shadow: 0 2px 2px 2px rgba(#000000, 0.2);
+  font-size: 2rem;
 }
 .playBtn:hover {
   background-color: white;
@@ -75,11 +78,22 @@ body {
 }
 .select {
   display: flex;
-  gap: 40px;
+  align-items: center;
+  gap: 20px;
   color: white;
 }
-h2 {
+.selectMove {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.moveImg {
+  width: 40px;
+}
+h2,
+p {
   font-weight: lighter;
+  font-size: 1.6rem;
 }
 
 .footer {
