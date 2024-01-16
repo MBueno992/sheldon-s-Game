@@ -6,7 +6,7 @@
 }
 body {
   font-family: 'Anton', sans-serif;
-  background-color: rgb(103, 196, 103);
+  background: radial-gradient(rgb(130, 184, 101), rgb(85, 124, 64));
 }
 
 .header {
@@ -22,6 +22,7 @@ body {
 }
 .atom {
   vertical-align: middle;
+  width: 100px;
 }
 .main {
   display: flex;
@@ -47,6 +48,17 @@ body {
 }
 .rock {
   grid-area: 1 / 3 / 2 / 4;
+}
+.rock:hover,
+.spock:hover,
+.paper:hover,
+.scissors:hover,
+.lizard:hover {
+  filter: invert(100%);
+  width: 75px;
+  height: 75px;
+  background-color: black;
+  border-radius: 100px;
 }
 .spock {
   grid-area: 2 / 1 / 3 / 2;
