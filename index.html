@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
       rel="stylesheet"
     />
+    <script
+      src="https://kit.fontawesome.com/8e478fa44e.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
@@ -19,23 +23,35 @@
       </h1>
     </header>
     <main class="main">
-      <input
-        class="inputName js-inputName"
-        type="text"
-        placeholder="Introduce tu nombre: "
-      />
       <section class="gameOption">
-        <img src="./img/piedra.png" alt="piedra" class="rock js-gameOption" />
-        <img src="./img/Spock.png" alt="spock" class="spock js-gameOption" />
-        <img src="./img/papel.png" alt="papel" class="paper js-gameOption" />
+        <img
+          src="./img/piedra.png"
+          alt="piedra"
+          id="rock"
+          class="rock js-gameOption"
+        />
+        <img
+          src="./img/Spock.png"
+          alt="spock"
+          id="spock"
+          class="spock js-gameOption"
+        />
+        <img
+          src="./img/papel.png"
+          alt="papel"
+          id="paper"
+          class="paper js-gameOption"
+        />
         <img
           src="./img/tijeras.png"
           alt="tijeras"
+          id="scissors"
           class="scissors js-gameOption"
         />
         <img
           src="./img/Lagarto.png"
           alt="lagarto"
+          id="lizard"
           class="lizard js-gameOption"
         />
       </section>
@@ -43,7 +59,7 @@
       <section class="select">
         <article class="selectMove">
           <h2 class="js-player">Jugador</h2>
-          <img src="" alt="" class="moveImg js-playerSelect" />
+          <img src="" alt="" class="moveImg js-playerSelect" id="" />
         </article>
         <p>vs</p>
         <article class="selectMove">
@@ -51,19 +67,17 @@
           <img src="" alt="" class="moveImg js-sheldonSelect" />
         </article>
       </section>
-      <article>
-        <h3 class="js-condition">Regla que se cumple</h3>
-        <p class="js-msg">Resultado</p>
+      <article class="containerText">
+        <h3 class="condition js-condition"></h3>
+        <p class="msgResult js-msg">¿Listo para la derrota?</p>
       </article>
-      <section>
-        Marcador
-        <p>Jugador</p>
-        <p>Sheldon</p>
+      <section class="scoreboard">
+        <p class="js-playerScore">Jugador/a</p>
+        <p class="js-sheldonScore">Sheldon</p>
       </section>
     </main>
     <footer class="footer">
-      <p class="rules js-rules">Reglas</p>
-      <button class="reset js-reset">Reiniciar contador</button>
+      <button class="reset js-reset">Reset</button>
       <img src="./img/footer.PNG" alt="Sheldon" class="footerImg" />
     </footer>
     <script type="text/javascript" src="./js/main.js"></script>
