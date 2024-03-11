@@ -11,6 +11,10 @@ const msg = document.querySelector('.js-msg');
 const reset = document.querySelector('.js-reset');
 const playerScore = document.querySelector('.js-playerScore');
 const sheldonScore = document.querySelector('.js-sheldonScore');
+const modalMsg = document.querySelector('.js-modal');
+const finalMsg = document.querySelector('.js-finalMsg');
+const sheldonFinal = document.querySelector('.js-sheldonimg');
+const closeBtn = document.querySelector('.js-closeBtn');
 
 let user = 0;
 let pc = 0;
@@ -137,15 +141,29 @@ const gameRules = () => {
       pc++;
     }
     paintScore();
+    finishGame();
   }
 };
 const paintScore = () => {
   playerScore.innerHTML = `Jugador/a: ${user}`;
   sheldonScore.innerHTML = `Sheldon: ${pc}`;
 };
+const finishGame = () => {
+  if (user === 5) {
+    modalMsg.classList.remove('hidden');
+    finalMsg.innerHTML = '¡Porras, me has ganado!';
+    sheldonFinal.src = './img/lose.gif';
+  }
+  if (pc === 5) {
+    modalMsg.classList.remove('hidden');
+    finalMsg.innerHTML = '¡Te he ganado! La victoria era inevitable.';
+    sheldonFinal.src = './img/win.gif';
+  }
+};
 
-const resetGame = (event) => {
-  event.preventDefault();
+const resetGame = () => {
+  user = 0;
+  pc = 0;
   msg.innerHTML = '¿Listo para la derrota?';
   playerScore.innerHTML = 'Jugador/a';
   sheldonScore.innerHTML = 'Sheldon';
@@ -155,6 +173,12 @@ const resetGame = (event) => {
   condition.innerHTML = '';
 };
 
+const closeModal = () => {
+  modalMsg.classList.add('hidden');
+  resetGame();
+};
+
 gameOption.forEach((option) => option.addEventListener('click', handleSelect));
 playBtn.addEventListener('click', gameRules);
 reset.addEventListener('click', resetGame);
+closeBtn.addEventListener('click', closeModal);
